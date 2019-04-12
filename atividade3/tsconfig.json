@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noEmitOnError": true,
+        "sourceMap": true
+    },
+    "include": [
+        "app/ts/**/*"
+    ]
+}
