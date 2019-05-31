@@ -1,0 +1,10 @@
+<ul class='tarefas'>
+  <li *ngFor='let tarefa of tarefas'>
+    <span class="badge">
+      {{tarefa.descricao}}<br/>
+    </span>
+    {{tarefa.responsavel}}<br/>
+    {{tarefa.porcentagem_associada}}%
+  </li>
+</ul>
+
