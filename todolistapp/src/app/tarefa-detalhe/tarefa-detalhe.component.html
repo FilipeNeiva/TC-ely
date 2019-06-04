@@ -1,0 +1,13 @@
+<div *ngIf="tarefa">
+    <h2> {{tarefa.descricao | uppercase}}</h2>
+    <div>
+      <label>Responsavel: 
+        {{tarefa.responsavel}}
+      </label>
+    </div>
+    <div>
+      <label>Porcentagem Associada: 
+        {{tarefa.porcentagem_associada}}
+      </label>
+    </div>
+  </div>

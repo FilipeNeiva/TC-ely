@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TAREFAS } from '../mock-tarefas';
+import { Tarefa } from '../models/tarefa';
+import { TarefaService } from '../tarefa.service'
 
 @Component({
   selector: 'app-tarefa',
@@ -8,11 +9,21 @@ import { TAREFAS } from '../mock-tarefas';
 })
 export class TarefaComponent implements OnInit {
 
-  tarefas = TAREFAS
+  selectedTarefa: Tarefa;
+  tarefas: Tarefa[];
 
-  constructor() { }
+  constructor(private tarefaService: TarefaService) { }
 
   ngOnInit() {
+    this.getTarefas();
+  }
+
+  onSelect(tarefa: Tarefa): void {
+    this.selectedTarefa = tarefa;
+  }
+
+  getTarefas(): void {
+    this.tarefaService.getTarefas().subscribe(tarefaz => this.tarefas = tarefaz);
   }
 
 }

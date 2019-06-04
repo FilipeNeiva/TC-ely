@@ -1,10 +1,13 @@
 <ul class='tarefas'>
-  <li *ngFor='let tarefa of tarefas'>
-    <span class="badge">
-      {{tarefa.descricao}}<br/>
-    </span>
+  <li *ngFor='let tarefa of tarefas'
+      [class.selected]="tarefa === selectedTarefa"
+      (click)="onSelect(tarefa)">
+    {{tarefa.descricao}}<br/>
+    <!--
     {{tarefa.responsavel}}<br/>
     {{tarefa.porcentagem_associada}}%
+    -->
   </li>
 </ul>
 
+<app-tarefa-detalhe [tarefa]='selectedTarefa'></app-tarefa-detalhe>
