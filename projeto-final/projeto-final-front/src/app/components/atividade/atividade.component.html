@@ -1,0 +1,28 @@
+<div style="text-align: right; margin-right: 5%">
+  <button type="button" class="btn btn-outline-primary" routerLink="">Inicio</button>
+  <button type="button" class="btn btn-outline-danger" (click)="sair()">Sair</button>
+</div>
+
+<div class="container">
+  <div class="row justify-content-md-center ">
+    <ul class="list-group col col-lg-5" *ngIf="atividades">
+      <li class="list-group-item list-group-item-action active">
+        <h1 style="text-align: center">
+          {{ tarefa.titulo }}
+        </h1>
+      </li>
+      <li class="list-group-item list-group-item-action" *ngFor="let atividade of atividades">
+        <h2>{{ atividade.nome }}</h2>
+        <small>{{ atividade.descricao }}</small>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <div class="form-group">
+          <input class="form-control" #itemNome type="text" placeholder="Nome">
+          <input class="form-control" #itemDescricao type="text" placeholder="Descricao">
+          <button class="form-control btn btn-primary" (click)="add(itemNome.value, itemDescricao.value)">Add</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+{{ error?.message }}

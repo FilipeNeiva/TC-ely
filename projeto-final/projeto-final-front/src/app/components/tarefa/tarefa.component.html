@@ -1,0 +1,28 @@
+<div style="text-align: right; margin-right: 5%">
+  <button type="button" class="btn btn-outline-danger" (click)="sair()">Sair</button>
+</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <ul class="list-group col col-lg-5">
+      <li class="list-group-item list-group-item-action active">
+        <h1 style="text-align: center">
+          Lista de Tarefas
+        </h1>
+      </li>
+      <li class="list-group-item list-group-item-action" *ngFor="let item of items">
+        <h2><a routerLink="/tarefa/{{ item.id }}/">{{ item.titulo }} /<small>{{ item.prazo }}</small></a>
+          <button type="button" class="btn btn-outline-danger float-right" (click)="delete(item.id)">Delete</button></h2>
+      </li>
+
+      <li class="list-group-item list-group-item-action">
+          <div class="form-group">
+              <input class="form-control" #itemTitulo type='text' placeholder='Titulo'>
+              <input class="form-control" #itemPrazo type='Date'>
+              <button class="form-control btn btn-primary" (click)="add(itemTitulo.value, itemPrazo.value)">Add</button>
+            </div>
+      </li>
+    </ul><br />
+
+  </div>
+</div>
+{{ error?.message }}

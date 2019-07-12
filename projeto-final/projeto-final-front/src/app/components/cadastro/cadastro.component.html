@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 5%">
+  <div class="row justify-content-md-center">
+    <div class="list-group col col-lg-5">
+      <div class="list-group-item list-group-item-action active">
+        <h1 style="text-align: center">
+          Cadastrar
+        </h1>
+      </div>
+      <div class="form-group">
+        <input class="list-group-item list-group-item-action" #username type='text' placeholder='Username'>
+        <input class="list-group-item list-group-item-action" #email type='text' placeholder='Email'>
+        <input class="list-group-item list-group-item-action" #password1 type='password' placeholder='Senha'>
+        <input class="list-group-item list-group-item-action" #password2 type='password' placeholder='Digite a senha novamente'>
+        <button class="form-control btn btn-primary" (click)="signup(username.value, email.value, password1.value, password2.value)">cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>{{ error?.message }}</p>
+<p *ngIf="error">{{ error?.error | json }}</p>
